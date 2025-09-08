@@ -1,0 +1,7 @@
+2025-08-18 21:55:28,736 - INFO - --------test_validateHomepageTitle1 starts--------
+2025-08-18 21:55:28,748 - INFO - --------data read from testdata file--------
+2025-08-18 21:55:28,763 - INFO - --------Webdriver instance getting--------
+2025-08-18 21:55:31,908 - INFO - --------url launched---------
+2025-08-18 21:55:31,985 - INFO - --------Login page object creating--------
+2025-08-18 21:55:31,985 - INFO - --------clicing on login link-------
+2025-08-18 21:55:34,495 - INFO - --------using login credentials--------

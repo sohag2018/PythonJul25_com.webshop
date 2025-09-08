@@ -1,0 +1,25 @@
+#locator
+import time
+from selenium.webdriver.common.by import By
+
+from pageObjects.LoginPage import LoginPage
+
+
+class HomePage:
+    logo_xpath="//img[@alt='Tricentis Demo Web Shop']"
+    login_link_xpath = "//a[normalize-space()='Log in']"
+
+    #constructor
+    def __init__(self, driver):
+        self.driver = driver
+
+    #actions method
+
+    def is_LogoPresent(self):
+        flag=self.driver.find_element(By.XPATH, self.logo_xpath).is_displayed()
+        return flag
+
+
+    def click_login_link(self):
+        self.driver.find_element(By.XPATH, self.login_link_xpath).click()
+        time.sleep(2)

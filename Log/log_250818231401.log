@@ -1,0 +1,8 @@
+08/18/2025 11:14:03 PM - INFO - ########test_login starts###########
+08/18/2025 11:14:06 PM - INFO - --------url launched---------
+08/18/2025 11:14:06 PM - INFO - --------clicing on login link---------
+08/18/2025 11:14:09 PM - INFO - --------passing login credentials--------
+08/18/2025 11:14:13 PM - INFO - -------clicking on login button--------
+08/18/2025 11:14:14 PM - INFO - -------validating login success or not--------
+08/18/2025 11:14:17 PM - INFO - -------getting profile text--------
+08/18/2025 11:14:20 PM - INFO - ----test_login Test case pass---------

@@ -1,0 +1,4 @@
+08/20/2025 09:29:17 PM - WARNING - The chromedriver version (138.0.7204.94) detected in PATH at C:\Users\enthr\PycharmProjects\com.demoshop\.venv/Scripts\chromedriver.exe might not be compatible with the detected chrome version (139.0.7258.128); currently, chromedriver 139.0.7258.138 is recommended for chrome 139.*, so it is advised to delete the driver in PATH and retry
+08/20/2025 09:29:18 PM - INFO - ####### test Homepage Logo statrt ########
+08/20/2025 09:29:21 PM - INFO - --------url launced---------
+08/20/2025 09:29:21 PM - INFO - --------Logo present or not capturing---------
