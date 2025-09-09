@@ -11,6 +11,7 @@ class LoginPage():
 
     #constructor receives webdriver instance
     def __init__(self, driver):
+        super.__init__(driver)
         self.driver = driver
 
     #action methods
