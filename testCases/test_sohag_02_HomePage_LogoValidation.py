@@ -7,7 +7,7 @@ Launching URL "https://demowebshop.tricentis.com/"
 
 import time
 from selenium import webdriver
-from pageObjects.HomePage import HomePage
+from pageObjects.sohag_HomePage import HomePage
 from utilities.readProperties import ReadConfig
 from utilities.customLogger import LogGen
 class Test_001_Login:

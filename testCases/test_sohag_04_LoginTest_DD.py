@@ -1,6 +1,6 @@
 import time
 from selenium import webdriver
-from pageObjects.LoginPage import LoginPage
+from pageObjects.sohag_LoginPage import LoginPage
 from utilities.readProperties import ReadConfig
 from utilities.ExcelReader import ExcelReader
 from utilities.customLogger import LogGen

@@ -2,7 +2,7 @@
 import time
 from selenium.webdriver.common.by import By
 
-from pageObjects.LoginPage import LoginPage
+from pageObjects.sohag_LoginPage import LoginPage
 
 
 class HomePage:
