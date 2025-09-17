@@ -1,0 +1,9 @@
+09/16/2025 01:33:20 PM - INFO - ########test_login starts###########
+09/16/2025 01:33:23 PM - INFO - --------url launched---------
+09/16/2025 01:33:23 PM - INFO - --------clicing on login link---------
+09/16/2025 01:33:25 PM - INFO - --------passing login credentials--------
+09/16/2025 01:33:30 PM - INFO - -------clicking on login button--------
+09/16/2025 01:33:30 PM - INFO - -------validating login success or not--------
+09/16/2025 01:33:33 PM - INFO - -------getting profile text--------
+09/16/2025 01:33:37 PM - INFO - -------validaying profile text--------
+09/16/2025 01:33:37 PM - INFO - ----test_login Test case pass---------

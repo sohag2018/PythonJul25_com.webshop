@@ -1,0 +1,1 @@
+09/16/2025 01:25:28 PM - WARNING - The chromedriver version (138.0.7204.94) detected in PATH at C:\Users\enthr\PycharmProjects\com.demoshop\.venv/Scripts\chromedriver.exe might not be compatible with the detected chrome version (140.0.7339.81); currently, chromedriver 140.0.7339.82 is recommended for chrome 140.*, so it is advised to delete the driver in PATH and retry

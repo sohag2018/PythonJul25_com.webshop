@@ -1,0 +1,8 @@
+09/16/2025 01:35:02 PM - INFO - --------test_validateHomepageTitle1 starts--------
+09/16/2025 01:35:02 PM - INFO - --------data read from testdata file--------
+09/16/2025 01:35:02 PM - INFO - --------Webdriver instance getting--------
+09/16/2025 01:35:05 PM - INFO - --------url launched---------
+09/16/2025 01:35:05 PM - INFO - --------Login page object creating--------
+09/16/2025 01:35:05 PM - INFO - --------clicing on login link-------
+09/16/2025 01:35:07 PM - INFO - --------using login credentials--------
+09/16/2025 01:35:12 PM - INFO - --------successfully logged in--------

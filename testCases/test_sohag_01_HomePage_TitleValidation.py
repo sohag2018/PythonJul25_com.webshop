@@ -3,9 +3,12 @@ from selenium import webdriver
 from pageObjects.sohag_LoginPage import LoginPage
 from utilities.readProperties import ReadConfig
 from utilities.customLogger import LogGen
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 class Test_001_Login:
     #get url and credentials from config.ini file
-    base_url =ReadConfig.getBaseUrl()
+    # base_url =ReadConfig.getBaseUrl()
     exp_title=ReadConfig.getTitle()
 
     #call static LogGen() which will return looger obj>store in a variable
@@ -13,10 +16,17 @@ class Test_001_Login:
 
     #pytest method-validate homepage title
     #by using fixture (conftest.py file) getting driver instance through setup
-    def test_validateHomepageTitle1(self, setup):
+    def test_validateHomepageTitle1(self):
         self.log.info("####### test Homepage title statrt ########") #using looger
-        self.driver = setup
-        self.driver.get(self.base_url)
+
+
+        # Optional: Chrome options
+        options = webdriver.ChromeOptions()
+
+        # Correct way to use ChromeDriverManager with Selenium 4.6+
+        service = Service(ChromeDriverManager().install())
+        self.driver = webdriver.Chrome(service=service, options=options)
+        self.driver.get("https://demowebshop.tricentis.com/")
         self.log.info("--------url launced---------")#using looger
         self.driver.maximize_window()
         self.driver.implicitly_wait(5)

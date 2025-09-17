@@ -1,5 +1,8 @@
+from selenium.common import TimeoutException, NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class BasePage:
@@ -24,12 +27,12 @@ class BasePage:
     #ClickOnElement
     #
     def __init__(self,driver):
-        self.drivre=driver
+        self.driver=driver
 
     # findElement
 
 
-    def find_SingleElement(self,driver,locatorType,locatorValue):
+    def find_SingleElement(self,locatorType,locatorValue):
         locatorType=locatorType.lower()
         #map
         by_type={
@@ -43,10 +46,34 @@ class BasePage:
            "tag_name":By.TAG_NAME
         }
 
-        element=driver.find_element(by_type.get(locatorType),locatorValue)
+        element=self.driver.find_element(by_type.get(locatorType),locatorValue)
         return element
 
-    def find_ListOfElements(self, driver, locatorType, locatorValue):
+    # def find_SingleElement(self,locatorType,locatorValue,timeout=10):
+    #
+    #     locatorType=locatorType.lower()
+    #     #map
+    #     try:
+    #         by_type={
+    #            "id":By.ID,
+    #            "name":By.NAME,
+    #            "class":By.CLASS_NAME,
+    #            "link_text":By.LINK_TEXT,
+    #            "partial_link_text":By.PARTIAL_LINK_TEXT,
+    #            "xpath":By.XPATH,
+    #            "css_selector":By.CSS_SELECTOR,
+    #            "tag_name":By.TAG_NAME
+    #         }
+    #
+    #         element=WebDriverWait(self.driver, timeout).until(
+    #         EC.visibility_of_element_located((by_type.get(locatorType),locatorValue))
+    #     )
+    #         return element
+    #     except (TimeoutException, NoSuchElementException) as e:
+    #         print(e)
+
+
+    def find_ListOfElements(self, locatorType, locatorValue):
         locatorType = locatorType.lower()
         # map
         by_type = {
@@ -60,10 +87,10 @@ class BasePage:
             "tag_name": By.TAG_NAME
         }
 
-        elements = driver.find_elements(by_type.get(locatorType), locatorValue)
+        elements = self.driver.find_elements(by_type.get(locatorType), locatorValue)
         return elements
 
-    def select_dropdown(self, driver, locatorType, locatorValue,select_method,method_value):
+    def select_dropdown(self, locatorType, locatorValue,select_method,method_value):
         locatorType = locatorType.lower()
         # map
         by_type = {
@@ -77,7 +104,7 @@ class BasePage:
             "tag_name": By.TAG_NAME
         }
 
-        element = driver.find_element(by_type.get(locatorType), locatorValue)
+        element = self.driver.find_element(by_type.get(locatorType), locatorValue)
 
         #obj of Select--to call select class methods
         select=Select(element)
@@ -90,4 +117,6 @@ class BasePage:
             dropdown_value=select.select_by_value(method_value)
 
         return dropdown_value
+
+
 
