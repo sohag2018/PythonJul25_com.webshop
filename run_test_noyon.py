@@ -19,6 +19,5 @@ report_name=f'Reports/automation_testReport_{timestamp}.html'
 #calling main()--to pass all command what we would in command line
 pytest.main([f'--html={report_name}','--browser=firefox',
              '--self-contained-html',
-             'testCases/test_sohag_02_HomePage_LogoValidation.py',
-             'testCases/test_sohag_03_LoginTestWithValidCredentials.py'])
+             'testCases/test_sohag_04_LoginTest_DD.py'])
 

@@ -1,5 +1,6 @@
 import time
 from selenium.webdriver.common.by import By
+from pageObjects.ReuseableMethods import BasePage
 class LoginPage():
     # find all locators
     login_link_xpath="//a[normalize-space()='Log in']"
@@ -12,6 +13,7 @@ class LoginPage():
     #constructor receives webdriver instance
     def __init__(self, driver):
         self.driver = driver
+        self.rm=BasePage(self.driver)
 
     #action methods
     def click_login_link(self):
@@ -19,13 +21,16 @@ class LoginPage():
         time.sleep(2)
 
     def setUsername(self, username):
-        self.driver.find_element(By.ID, self.txt_username_id).clear()
-        self.driver.find_element(By.ID, self.txt_username_id).send_keys(username)
+        #self.driver.find_element(By.ID, self.txt_username_id).clear()
+        #self.driver.find_element(By.ID, self.txt_username_id).send_keys(username)
+        self.rm.input_text_with_value("id", self.txt_username_id,username )
         time.sleep(2)
 
     def setPassword(self, password):
-        self.driver.find_element(By.ID, self.txt_password).clear()
-        self.driver.find_element(By.ID, self.txt_password).send_keys(password)
+        # self.driver.find_element(By.ID, self.txt_password).clear()
+        # self.driver.find_element(By.ID, self.txt_password).send_keys(password)
+        self.rm.input_text_with_value("id", self.txt_password, password)
+
         time.sleep(2)
     def clickLoginBtn(self):
         self.driver.find_element(By.CSS_SELECTOR, self.btn_login_cssSelector).click()

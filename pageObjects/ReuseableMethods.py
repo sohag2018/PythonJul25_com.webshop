@@ -35,42 +35,45 @@ class BasePage:
     def find_SingleElement(self,locatorType,locatorValue):
         locatorType=locatorType.lower()
         #map
-        by_type={
-           "id":By.ID,
-           "name":By.NAME,
-           "class":By.CLASS_NAME,
-           "link_text":By.LINK_TEXT,
-           "partial_link_text":By.PARTIAL_LINK_TEXT,
-           "xpath":By.XPATH,
-           "css_selector":By.CSS_SELECTOR,
-           "tag_name":By.TAG_NAME
-        }
+        try:
+            by_type={
+                "id":By.ID,
+                "name":By.NAME,
+                "class":By.CLASS_NAME,
+                "link_text":By.LINK_TEXT,
+                "partial_link_text":By.PARTIAL_LINK_TEXT,
+                "xpath":By.XPATH,
+                "css_selector":By.CSS_SELECTOR,
+                "tag_name":By.TAG_NAME
+            }
 
-        element=self.driver.find_element(by_type.get(locatorType),locatorValue)
-        return element
+            element=self.driver.find_element(by_type.get(locatorType),locatorValue)
+            return element
+        except (TimeoutException,NoSuchElementException) as e :
+            print(e)
 
-    # def find_SingleElement(self,locatorType,locatorValue,timeout=10):
-    #
-    #     locatorType=locatorType.lower()
-    #     #map
-    #     try:
-    #         by_type={
-    #            "id":By.ID,
-    #            "name":By.NAME,
-    #            "class":By.CLASS_NAME,
-    #            "link_text":By.LINK_TEXT,
-    #            "partial_link_text":By.PARTIAL_LINK_TEXT,
-    #            "xpath":By.XPATH,
-    #            "css_selector":By.CSS_SELECTOR,
-    #            "tag_name":By.TAG_NAME
-    #         }
-    #
-    #         element=WebDriverWait(self.driver, timeout).until(
-    #         EC.visibility_of_element_located((by_type.get(locatorType),locatorValue))
-    #     )
-    #         return element
-    #     except (TimeoutException, NoSuchElementException) as e:
-    #         print(e)
+
+    def find_SingleElement(self,locatorType,locatorValue,timeout=10):
+
+        locatorType=locatorType.lower()
+        #map
+        try:
+            by_type={
+               "id":By.ID,
+               "name":By.NAME,
+               "class":By.CLASS_NAME,
+               "link_text":By.LINK_TEXT,
+               "partial_link_text":By.PARTIAL_LINK_TEXT,
+               "xpath":By.XPATH,
+               "css_selector":By.CSS_SELECTOR,
+               "tag_name":By.TAG_NAME
+            }
+            element=WebDriverWait(self.driver, timeout).until(
+            EC.visibility_of_element_located((by_type.get(locatorType),locatorValue))
+        )
+            return element
+        except (TimeoutException, NoSuchElementException) as e:
+            print(e)
 
 
     def find_ListOfElements(self, locatorType, locatorValue):
@@ -119,4 +122,21 @@ class BasePage:
         return dropdown_value
 
 
+    def input_text_with_value(self, locatorType, locatorValue,text):
+        locatorType = locatorType.lower()
+        # map
+        by_type = {
+            "id": By.ID,
+            "name": By.NAME,
+            "class": By.CLASS_NAME,
+            "link_text": By.LINK_TEXT,
+            "partial_link_text": By.PARTIAL_LINK_TEXT,
+            "xpath": By.XPATH,
+            "css_selector": By.CSS_SELECTOR,
+            "tag_name": By.TAG_NAME
+        }
+
+        element = self.driver.find_element(by_type.get(locatorType), locatorValue)
+        element.clear()
+        element.send_keys(text)
 
